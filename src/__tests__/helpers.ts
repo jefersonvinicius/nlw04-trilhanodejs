@@ -1,5 +1,5 @@
 import { connectInDatabase } from '@app/database';
-import { createQueryBuilder, EntityTarget, QueryRunner, Repository } from 'typeorm';
+import { createQueryBuilder, EntityTarget } from 'typeorm';
 
 export async function setupDatabaseTest() {
   const connection = await connectInDatabase();

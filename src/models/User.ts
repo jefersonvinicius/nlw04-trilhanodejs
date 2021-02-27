@@ -1,9 +1,9 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity('users')
-export class User {
-  @PrimaryColumn()
+export class User extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
   readonly id: string;
 
   @Column()
@@ -14,10 +14,4 @@ export class User {
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
-
-  constructor() {
-    if (!this.id) {
-      this.id = uuid();
-    }
-  }
 }

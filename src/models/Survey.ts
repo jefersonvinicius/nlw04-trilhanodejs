@@ -1,9 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
-import { v4 as uuid } from 'uuid';
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('surveys')
-export class Survey {
-  @PrimaryColumn()
+export class Survey extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
   readonly id: string;
 
   @Column()
@@ -14,10 +13,4 @@ export class Survey {
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
-
-  constructor() {
-    if (!this.id) {
-      this.id = uuid();
-    }
-  }
 }

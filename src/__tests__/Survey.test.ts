@@ -1,8 +1,6 @@
-import supertest from 'supertest';
 import app from '@app/app';
-
-import { Survey } from '@app/models/Survey';
-import { clearTable, setupDatabaseTest } from './helpers';
+import supertest from 'supertest';
+import { setupDatabaseTest } from './helpers';
 
 const request = supertest(app);
 
@@ -16,7 +14,6 @@ describe('Survey', () => {
     expect(response.status).toBe(201);
   });
   it('Should get all surveys', async () => {
-    await clearTable(Survey);
     const response = await request.get('/surveys');
     expect(response.body).toBeInstanceOf(Array);
   });
