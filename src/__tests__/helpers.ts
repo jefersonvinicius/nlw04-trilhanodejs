@@ -1,11 +1,14 @@
 import { connectInDatabase } from '@app/database';
-import { createQueryBuilder, EntityTarget } from 'typeorm';
+import { Connection, getConnection } from 'typeorm';
 
 export async function setupDatabaseTest() {
   const connection = await connectInDatabase();
   await connection.runMigrations();
+  return connection;
 }
 
-export async function clearTable(entity: EntityTarget<unknown>) {
-  await createQueryBuilder().delete().from(entity).execute();
+export async function teardownDatabaseTest() {
+  const connection = getConnection();
+  await connection.dropDatabase();
+  await connection.close();
 }

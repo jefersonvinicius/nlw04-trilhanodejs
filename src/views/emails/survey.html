@@ -1,0 +1,40 @@
+<style>
+  .evaluation-options {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .evaluation-options a:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  .value {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: blueviolet;
+  }
+</style>
+
+<div class="container">
+  <p>Qual nota a gente merece?</p>
+  <div class="evaluation-options">
+    <a href="{{ baseURL }}/surveys/answer/1?u={{ evaluationId }}" class="value">1</a>
+    <a href="{{ baseURL }}/surveys/answer/2?u={{ evaluationId }}" class="value">2</a>
+    <a href="{{ baseURL }}/surveys/answer/3?u={{ evaluationId }}" class="value">3</a>
+    <a href="{{ baseURL }}/surveys/answer/4?u={{ evaluationId }}" class="value">4</a>
+    <a href="{{ baseURL }}/surveys/answer/5?u={{ evaluationId }}" class="value">5</a>
+    <a href="{{ baseURL }}/surveys/answer/6?u={{ evaluationId }}" class="value">6</a>
+    <a href="{{ baseURL }}/surveys/answer/7?u={{ evaluationId }}" class="value">7</a>
+    <a href="{{ baseURL }}/surveys/answer/8?u={{ evaluationId }}" class="value">8</a>
+    <a href="{{ baseURL }}/surveys/answer/9?u={{ evaluationId }}" class="value">9</a>
+    <a href="{{ baseURL }}/surveys/answer/10?u={{ evaluationId }}" class="value">10</a>
+  </div>
+</div>
