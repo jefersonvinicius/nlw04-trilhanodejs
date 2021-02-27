@@ -10,6 +10,7 @@ export class createSurveys1614206837510 implements MigrationInterface {
             name: 'id',
             type: 'uuid',
             isPrimary: true,
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'title',

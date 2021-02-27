@@ -6,7 +6,7 @@ export class createUsers1614121300268 implements MigrationInterface {
       new Table({
         name: 'users',
         columns: [
-          { name: 'id', type: 'uuid', isPrimary: true },
+          { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v4()' },
           { name: 'name', type: 'varchar' },
           { name: 'email', type: 'varchar' },
           { name: 'created_at', type: 'timestamp', default: 'now()' },

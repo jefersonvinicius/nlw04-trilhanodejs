@@ -6,10 +6,10 @@ export class createSurveysUsers1614293152042 implements MigrationInterface {
       new Table({
         name: 'surveys_users',
         columns: [
-          { name: 'id', type: 'uuid', isPrimary: true },
+          { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v4()' },
           { name: 'user_id', type: 'uuid' },
           { name: 'survey_id', type: 'uuid' },
-          { name: 'value', type: 'smallint', isNullable: true },
+          { name: 'value', type: 'smallint  ', isNullable: true },
           { name: 'created_at', type: 'timestamp', default: 'now()' },
         ],
         foreignKeys: [
