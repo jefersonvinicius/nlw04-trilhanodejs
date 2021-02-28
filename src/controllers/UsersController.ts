@@ -17,7 +17,7 @@ export class UsersController {
     }
 
     const { name, email } = request.body;
-    const userAlreadyExists = await User.findOnase({ email });
+    const userAlreadyExists = await User.findOne({ email });
     if (userAlreadyExists) {
       throw new AppError('user already exists', 409);
     }
