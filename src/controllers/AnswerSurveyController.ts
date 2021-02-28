@@ -1,6 +1,6 @@
 import { AppError } from '@app/errors/AppError';
 import { Evaluation } from '@app/models/Evaluation';
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 
 export class AnswerSurveyController {
   async handle(request: Request, response: Response) {
